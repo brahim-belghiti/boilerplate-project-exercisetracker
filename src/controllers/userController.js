@@ -16,7 +16,6 @@ const createUser = async (req, res) => {
 const getUsers = async (req, res) => {
     try {
         const result = await getUsersService();
-        console.log("🚀 ~ getUsers ~ result:", result)
         res.status(200).json(result);
     } catch (err) {
         res.status(400).json({ error: err.message });
