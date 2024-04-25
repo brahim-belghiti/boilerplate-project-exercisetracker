@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const exerciseSchema = user => new Schema({
-    userId: {
+const exerciseSchema = new Schema({
+    user_id: {
         type: Schema.Types.ObjectId,
-        ref: user, // This refers to the 'User' model
+        ref: 'User', 
         required: true
     },
     username: {
@@ -25,7 +25,5 @@ const exerciseSchema = user => new Schema({
     }
 });
 
-
-
-const Exercise = mongoose.model('Exercise', exerciseSchema('User')); // Pass the 'User' model as a parameter
+const Exercise = mongoose.model('Exercise', exerciseSchema);
 module.exports = Exercise;
