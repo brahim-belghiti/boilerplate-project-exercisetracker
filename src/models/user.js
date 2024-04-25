@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const userSechma = new mongoose.sechma({
-    usename: {
+const userSechma = new mongoose.Schema({
+    username: {
         type: String,
         required: true
     }

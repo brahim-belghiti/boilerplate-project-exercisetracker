@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const exerciseSechma = new mongoose.sechma({
+const exerciseSechma = new mongoose.Schema({
     username: {
         type: String,
         required: true
