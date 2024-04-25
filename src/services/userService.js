@@ -6,7 +6,6 @@ const createUserService = async (userName) => {
         const savedUser = await newUser.save();
         return savedUser;
     } catch (err) {
-        console.error(err);
         throw new Error('Internal Server Error'); // Throw the error to be caught by the caller
     }
 }
@@ -16,7 +15,6 @@ const getUsersService = async () => {
         const allUsers = await User.find();
         return allUsers;
     } catch (err) {
-        console.error(err);
         throw new Error('Internal Server Error'); // Throw the error to be caught by the caller
     }
 }

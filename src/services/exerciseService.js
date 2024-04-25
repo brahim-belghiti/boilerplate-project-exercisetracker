@@ -55,7 +55,7 @@ const getUserExercises = async (userId, from, to, limit) => {
             log: exercises.map(exercise => ({
                 description: exercise.description,
                 duration: exercise.duration,
-                date: exercise.date
+                date: exercise.date.toDateString()
             }))
         };
 
