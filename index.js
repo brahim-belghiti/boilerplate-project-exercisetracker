@@ -2,6 +2,17 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 require('dotenv').config()
+const mongoose = require('mongoose');
+
+const DATABASE_URI = process.env.MONGO_URI;
+
+mongoose.connect(DATABASE_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  console.log('Database connection successful');
+})
+  .catch((err) => {
+    console.error('Database connection error');
+  });
+
 
 app.use(cors())
 app.use(express.static('public'))
